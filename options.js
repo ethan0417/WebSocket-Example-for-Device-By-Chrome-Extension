@@ -3,7 +3,7 @@ $(function(){
       minNum = 0,
       roomID = '',
       background = chrome.extension.getBackgroundPage(),
-      serverURL = 'http://211.78.254.40:3008'
+      serverURL = 'http://127.0.0.1:3008'
   // Greate WebSocked Room
   function getRoom(id){
     $.ajax({
