@@ -1,8 +1,7 @@
-var wsUri = "ws://54.238.181.209:3000/wbsc/websocket";
+var wsUri = "ws://211.78.254.59:3001/wbsc/websocket";
 var output;
 function init() {
   console.log('start init function!');
-  output = document.getElementById("output");
   testWebSocket();
 }
 /**
@@ -16,46 +15,45 @@ function testWebSocket() {
   };
   websocket.onclose = function (evt) {
     console.log('close websocket success!!')
-  onClose(evt)
+    onClose(evt)
   };
   websocket.onmessage = function (evt) {
-    console.log('get websocket message!!')
     onMessage(evt)
   };
   websocket.onerror = function (evt) {
     console.log('websocket error!!')
-  onError(evt)
+    onError(evt)
   };
 }
 /**
  *  Function
  */
 function onOpen(evt) {
-  writeToScreen("CONNECTED");
+  //writeToScreen("CONNECTED");
   doSend("WebSocket rocks");
 }
 function onClose(evt) {
-  writeToScreen("DISCONNECTED");
+  //writeToScreen("DISCONNECTED");
 }
 function onMessage(evt) {
-  //writeToScreen('<span style="color:blue;">RESPONSE:'+evt.data+'</span>');
-  var window_height = window.innerHeight,
-      window_width = window.innerWidth,
-      tmp,
-      new_height,
-      new_width;
+  var tmp,
+      getWidth,
+      getHeight;
   tmp = evt.data.split(' ');
-  console.log(tmp);
-  new_width = window_width * Number(tmp[0]);
-  new_height = window_height * Number(tmp[1]);
-  $('.close').css('top', new_height).css('left', new_width);
-  //websocket.close();
+  getWidth = Number(tmp[0]);
+  getHeight = Number(tmp[1]);
+  // Send server X and Y data to contentScript.js
+  chrome.tabs.query({active:true, currentWindow:true}, function(tab){
+    console.log('background send message to contentScript : ')
+    console.log({ x: getWidth , y: getHeight })
+    chrome.tabs.sendMessage(tab[0].id, { x: getWidth , y: getHeight });
+  });
 }
 function onError(evt) {
-  writeToScreen('<span style="color:red;">ERROR:</span>' + evt.data);
+  //writeToScreen('<span style="color:red;">ERROR:</span>' + evt.data);
 }
 function doSend(message) {
-  writeToScreen("SENT: " + message);
+  //writeToScreen("SENT: " + message);
   websocket.send(message);
 }
 function writeToScreen(message) {
@@ -65,4 +63,4 @@ function writeToScreen(message) {
   output.appendChild(pre);
 }
 
-window.addEventListener("load", init, false);
+chrome.browserAction.onClicked.addListener(init);

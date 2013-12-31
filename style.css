@@ -41,6 +41,10 @@ body{
   background-repeat: no-repeat;
   background-position: 0,2% 0,98% 0;
   background-size: 100% 100%, 55% 31.927%, 55% 31.927%;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 .droid::after {
   top: 0.7em;
