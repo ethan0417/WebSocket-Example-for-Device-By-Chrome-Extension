@@ -1,5 +1,5 @@
-var wsUri = "ws://211.78.254.59:3001/wbsc/websocket";
-var output;
+var server = "211.78.254.40:3001";
+var wsUri =  'ws://'+ server + "/wbsc/websocket";
 function init() {
   console.log('start init function!');
   testWebSocket();
@@ -55,12 +55,6 @@ function onError(evt) {
 function doSend(message) {
   //writeToScreen("SENT: " + message);
   websocket.send(message);
-}
-function writeToScreen(message) {
-  var pre = document.createElement("p");
-  pre.style.wordWrap = "break-word";
-  pre.innerHTML = message;
-  output.appendChild(pre);
 }
 
 chrome.browserAction.onClicked.addListener(init);
