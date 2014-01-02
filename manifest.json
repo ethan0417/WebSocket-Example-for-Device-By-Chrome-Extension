@@ -1,8 +1,8 @@
 {
-  "name": "websocket index",
-  "version": "0.0.1",
+  "name": "產品名稱還在想",
+  "version": "0.0.2",
   "manifest_version": 2,
-  "description": "websocket mouse test",
+  "description": "點選圖示，設定您的連線名稱，並按下開始，到您預操作的網頁，重新整理即可。",
   "browser_action": {
     "default_icon": "images/icon16.png"
   },
@@ -12,13 +12,19 @@
     "128": "images/icon128.png"
   },
   "background": {
-    "scripts": ["websocket.js"]
+    "scripts": [
+      "jquery.js",
+      "sockjs-0.3.min.js",
+      "websocket-multiplex-0.1.js",
+      "websocket.js"
+    ]
   },
   "permissions": [
     "tabs",
     "http://211.78.254.40:3008/*",
     "http://127.0.0.1:3008/*",
-    "http://211.78.254.40:3008/*"
+    "http://211.78.254.40:3008/*",
+    "http://211.78.254.40:9999/*"
    ],
   "options_page": "options.html",
   "content_scripts": [

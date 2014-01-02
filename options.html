@@ -5,17 +5,28 @@
     <title>Options</title>
     <script src='jquery.js'></script>
     <script src='options.js'></script>
+    <style>
+      body{
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
+    <h1>操作手冊</h1>
+    <h2>步驟一</h2>
     <div>
-      your server room code : <span id='roomID'></span>
+      <span>請輸入您要建立的頻道名稱：</span>
+      <input type='text' value='' id='roomName'>
     </div>
+    <h2>步驟二</h2>
+    <div>
+      <input type='BUTTON' value='開始' id='start'>
+      <!--<input type='BUTTON' value='結束' id='close'>-->
+    </div>
+    <h2>步驟三</h2>
+    <p>請到您預操作的網頁，重新整理即可。</p>
     <div>
       <p id='error' style='color: red;'></p>
-    </div>
-    <div>
-      <input type='button' value='開炲' id='start'>
-      <input type='button' value='結束' id='close'>
     </div>
   </body>
 </html>
