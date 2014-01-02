@@ -2,7 +2,6 @@ var server = "211.78.254.40:9999";
 var prefix = "/multiplex";
 var wsUri =  'http://'+ server + prefix;
 
-
 function init(roomName) {
   console.log('start init function!');
   testWebSocket(roomName);
@@ -34,8 +33,6 @@ function testWebSocket(roomName) {
  *  Function
  */
 function onOpen(evt) {
-  //writeToScreen("CONNECTED");
-  doSend("WebSocket rocks");
 }
 function onClose(evt) {
   //writeToScreen("DISCONNECTED");
@@ -55,11 +52,6 @@ function onMessage(evt) {
   });
 }
 function onError(evt) {
-  //writeToScreen('<span style="color:red;">ERROR:</span>' + evt.data);
-}
-function doSend(message) {
-  //writeToScreen("SENT: " + message);
-  websocket.send(message);
 }
 function openOrFocusOptionsPage() {
   var optionsUrl = chrome.extension.getURL('options.html'); 

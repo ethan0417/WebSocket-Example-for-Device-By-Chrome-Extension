@@ -13,10 +13,10 @@
   },
   "background": {
     "scripts": [
-      "jquery.js",
-      "sockjs-0.3.min.js",
-      "websocket-multiplex-0.1.js",
-      "websocket.js"
+      "javascripts/lib/jquery.js",
+      "javascripts/lib/sockjs-0.3.min.js",
+      "javascripts/lib/websocket-multiplex-0.1.js",
+      "javascripts/background.js"
     ]
   },
   "permissions": [
@@ -33,7 +33,7 @@
             "<all_urls>"
          ],
          "js": [
-            "contentScript.js"
+            "javascripts/contentScript.js"
          ]
       }
   ]
