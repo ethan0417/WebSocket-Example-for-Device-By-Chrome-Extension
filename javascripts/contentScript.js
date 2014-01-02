@@ -6,8 +6,8 @@ var xx = e.pageX, // 取得滑鼠X位置
 // Set element to HTML
 var node = document.createElement("div");
     node.style.position = "absolute";
-    node.style.width = "50px";
-    node.style.height = "50px";
+    node.style.width = "20px";
+    node.style.height = "20px";
     node.style.backgroundColor = "red";
 document.body.appendChild(node);
 // Get X and Y message from websocket.js
