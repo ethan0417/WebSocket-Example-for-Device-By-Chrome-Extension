@@ -1,4 +1,4 @@
-var server = "211.78.254.40:9999";
+var server = "extcontrol.arecord.us:3000";
 var prefix = "/multiplex";
 var serverURL = 'http://'+server;
 var wsUri =  serverURL + prefix;
