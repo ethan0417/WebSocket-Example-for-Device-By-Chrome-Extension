@@ -71,7 +71,7 @@ function getRoom(id, callback){
       };
     },
     error: function(data){
-      alert('error  :' + data)
+      alert(data);
     }
   })
 }
@@ -81,7 +81,6 @@ function getRoom(id, callback){
 function onOpen(evt) {
 }
 function onClose(evt) {
-  //writeToScreen("DISCONNECTED");
 }
 function onMessage(evt) {
   var tmp,
